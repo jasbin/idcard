@@ -10,6 +10,8 @@ class UserCard extends StatefulWidget {
 }
 
 class _UserCardState extends State<UserCard> {
+  int age = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,7 @@ class _UserCardState extends State<UserCard> {
             Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/user.jpg'),
-                radius: 50,
+                radius: 30,
               ),
             ),
             Divider(
@@ -80,9 +82,29 @@ class _UserCardState extends State<UserCard> {
                       fontWeight: FontWeight.bold),
                 ),
               ],
-            )
+            ),
+            SizedBox(height: 30),
+            Text('Age',
+                style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
+            SizedBox(height: 10),
+            Text(
+              '$age',
+              style: TextStyle(
+                  color: Colors.amberAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            age++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
       ),
     );
   }
