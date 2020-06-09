@@ -28,11 +28,11 @@ class _UserCardState extends State<UserCard> {
             Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/user.jpg'),
-                radius: 30,
+                radius: 50,
               ),
             ),
             Divider(
-              height: 90.0,
+              height: 50.0,
               color: Colors.grey,
             ),
             Text(
